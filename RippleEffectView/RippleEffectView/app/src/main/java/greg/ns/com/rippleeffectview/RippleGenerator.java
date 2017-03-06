@@ -1,6 +1,7 @@
 package greg.ns.com.rippleeffectview;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
@@ -42,6 +43,12 @@ public class RippleGenerator {
 	public RippleGenerator(View rippleView, int color) {
 		this.rippleView = rippleView;
 		this.rippleColor = color;
+		
+		/** 
+		 * Set the default background color as white,
+		 * the background is necessary, otherwsie the ripple won't work.
+		 */
+		rippleView.setBackgroundColor(Color.WHITE); 
 		init();
 	}
 
@@ -126,6 +133,7 @@ public class RippleGenerator {
 			default:
 				break;
 		}
+		
 		return false;
 	}
 
